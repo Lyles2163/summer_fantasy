@@ -1,0 +1,51 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "liu.moc3",
+    "Textures": [
+      "liu.8192/texture_00.png"
+    ],
+    "Physics": "liu.physics3.json",
+    "DisplayInfo": "liu.cdi3.json",
+    "Motions": {
+      "idle": [
+        {
+          "File": "Animation/idle_v4.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "idle_lively": [
+        {
+          "File": "Animation/idle_lively_v4.motion3.json",
+          "FadeInTime": 0.8,
+          "FadeOutTime": 0.8
+        }
+      ],
+      "Idle": [
+        {
+          "File": "Animation/idle_lively_v4.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": [
+        "ParamMouthOpenY"
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ]
+    }
+  ]
+}

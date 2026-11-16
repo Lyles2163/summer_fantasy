@@ -1,0 +1,50 @@
+; 第三章：生日筹备（关键分歧2）
+changeBg:corridor_day.webp -next;
+changeFigure:兰屿/lanyu.model3.json -right -id=lanyu -transform={"scale":{"x":2,"y":2},"position":{"y":760}} -motion=idle_lively -next;
+:十月的时候，兰屿神神秘秘地把我拉到走廊尽头。;
+兰屿:下周六，乐茹生日。;
+我:……你怎么知道？;
+兰屿:我们从初中就认识了，能不知道吗。;
+:他靠在窗边，难得没有笑。;
+兰屿:她这个人，不太会主动说自己想要什么。;
+兰屿:但每年生日，她都会在课桌里放一张空白的卡片。;
+我:空白卡片？;
+兰屿:嗯。她说，想看看有没有人知道该写什么。;
+:我沉默了。;
+兰屿:我告诉你这些，可不是让你随便应付的。;
+:他拍了拍我的肩，走了。;
+changeFigure:none -id=lanyu -next;
+changeBg:stationery_store.webp -next;
+:放学后，我一个人在文具店里站了很久。;
+:玻璃柜里有一枚山形的书签，木头的，和乐茹那枚很像。;
+:旁边是一叠素色的信纸。;
+:我想起山顶的风，想起她说“是很好”时的眼睛。;
+:乐茹的生日，我要不要准备？;
+choose:认真准备礼物和信:prepare_gift|算了，口头祝福就好:no_gift;
+;
+label:prepare_gift
+setVar:key2=gift;
+:我把那枚山形书签买了下来，又挑了一叠素色信纸。;
+changeBg:bedroom_night.webp -next;
+:那天晚上，我在台灯下写了很久。;
+:写了撕，撕了写。最后留在纸上的，只有几行很笨拙的话。;
+:——谢谢你成为我的同桌。;
+:——谢谢你让我觉得，上学是件值得期待的事。;
+:——生日快乐。;
+:写完的时候，窗外已经全黑了。;
+:我把信纸折好，夹进书里，心脏跳得有些快。;
+setVar:leru_fav=leru_fav+25;
+jumpLabel:birthday_pre_end;
+;
+label:no_gift
+setVar:key2=nogift;
+changeBg:street_night.webp -next;
+:我在文具店门口站了很久，最后还是转身走了。;
+:不过是一个生日而已。;
+:我这样告诉自己。;
+:可回家的路上，我还是忍不住想，那张空白的卡片上，会不会有人写下什么。;
+setVar:leru_fav=leru_fav-25;
+jumpLabel:birthday_pre_end;
+;
+label:birthday_pre_end
+changeScene:ch04_birthday.txt;

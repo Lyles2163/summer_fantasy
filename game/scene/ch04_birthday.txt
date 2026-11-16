@@ -1,0 +1,59 @@
+; 第四章：乐茹生日
+changeBg:dessert_shop.webp -next;
+changeFigure:阮乐茹/leru.model3.json -center -id=leru -transform={"scale":{"x":2,"y":2},"position":{"y":760}} -motion=idle_lively -next;
+:周六下午，兰屿在群里发消息：老地方，给乐茹过生日。;
+:所谓的老地方，是学校后面那家小小的甜品店。;
+:我到的时候，乐茹已经坐在靠窗的位置了。;
+:她今天穿了一条浅蓝色的裙子，看见我，眼睛亮了一下。;
+jumpLabel:birthday_cold -when=key2=="nogift";
+;
+; ==== 礼物线：关系升温 ====
+:我把包里的纸袋递过去。;
+阮乐茹:这是……？;
+我:打开看看。;
+:她拆开纸袋，先看见那枚山形书签，愣了一下。;
+:然后她抽出信纸，展开。;
+:她读得很慢。;
+:读到一半的时候，她忽然抬起头看了我一眼，又低下去。;
+:甜品店的灯光很暖，她的耳朵红得厉害。;
+阮乐茹:……你写得也太肉麻了。;
+我:那你还看这么久。;
+阮乐茹:我、我在检查有没有错别字。;
+:她把信纸仔细折好，夹进随身带的书里，动作和那天夹书签时一模一样。;
+阮乐茹:谢谢你。;
+:她顿了顿，声音轻下来。;
+阮乐茹:这是我最喜欢的生日礼物。;
+:兰屿在旁边起哄，被乐茹瞪了一眼。;
+:那天晚上回家，我收到她发来的一条消息。;
+:乐茹：书签我会一直用。;
+:乐茹：明年生日……你还来吗？;
+我:来。;
+jumpLabel:birthday_after;
+;
+; ==== 无礼物线：关系冷却 ====
+label:birthday_cold
+:兰屿把一个蛋糕放在桌上，插上蜡烛。;
+:大家唱完生日歌，乐茹闭上眼睛许愿。;
+:轮到我送祝福的时候，我张了张嘴。;
+我:生日快乐。;
+:只有这四个字。;
+阮乐茹:……谢谢。;
+:她笑了笑，很礼貌，也很远。;
+:兰屿看了我一眼，轻轻叹了口气。;
+:吹蜡烛的时候，乐茹的目光越过火苗，落在我身上，又很快移开。;
+:那天的蛋糕很甜，我却吃得没什么味道。;
+jumpLabel:birthday_after;
+;
+label:birthday_after
+changeBg:street_night.webp -next;
+changeFigure:刘熙朗/liu.model3.json -right -id=liu -transform={"scale":{"x":2.4,"y":2.4},"position":{"y":80}} -motion=idle_lively -next;
+:散场的时候，刘熙朗在门口等我。;
+刘熙朗:送你回去？;
+我:嗯。;
+:路上他忽然开口。;
+刘熙朗:你今天……是不是有话没说完？;
+我:没有。;
+:他看了我一眼，没再问。;
+changeFigure:none -id=liu -next;
+changeFigure:none -id=leru -next;
+changeScene:ch05_liu_heart.txt;

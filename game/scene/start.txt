@@ -1,0 +1,16 @@
+; 《夏日幻想》—— 入口与全局初始化
+; 变量说明：leru_fav=乐茹好感 / study=学业 / liu_trust=熙朗信任 / side_flag=副线标记
+;          key1=关键分歧1（mountain / game） / key2=关键分歧2（gift / nogift） / gave_up=退出标记
+bgm:s_Title.mp3 -volume=35;
+unlockBgm:s_Title.mp3 -name=雲を追いかけて;
+intro:那年夏天|蝉声把教室填得很满|我换了一个新同桌;
+;
+setVar:leru_fav=10;
+setVar:study=20;
+setVar:liu_trust=30;
+setVar:side_flag=0;
+setVar:key1=unset;
+setVar:key2=unset;
+setVar:gave_up=false;
+changeBg:classroom_day.webp -next;
+changeScene:ch00_prologue.txt;

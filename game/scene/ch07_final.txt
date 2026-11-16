@@ -1,0 +1,82 @@
+; 第七章：升学冲刺
+changeBg:classroom_winter.webp -next;
+:初三来得比想象中快。;
+:教室后面的倒计时牌，从三百多天，变成两位数。;
+setVar:study=study+20;
+changeFigure:阮乐茹/leru.model3.json -center -id=leru -transform={"scale":{"x":2,"y":2},"position":{"y":760}} -motion=idle_lively -next;
+:乐茹比以前更安静了。她的桌上堆满了卷子，笔芯一天换一根。;
+:而我的成绩，一直不上不下。;
+:班主任找我谈过一次话。;
+:他说，再这样下去，我和乐茹想去同一所高中，很难。;
+;
+; ==== 提前坏线：关键分歧没有全部走对 ====
+jumpLabel:early_bad -when=key1=="game";
+jumpLabel:early_bad -when=key2=="nogift";
+jumpLabel:early_bad -when=gave_up==true;
+;
+changeBg:school_gate_dusk.webp -next;
+:放学后，乐茹在校门口等我。;
+阮乐茹:要不要……一起复习？;
+:她抱着书，眼神有些躲闪。;
+阮乐茹:我数学不太好，你英语比我好。;
+阮乐茹:我们可以……互相帮忙。;
+:初三的复习，该怎么安排？;
+choose:每周和乐茹去图书馆自习:study_weekly|偶尔复习一下:study_sometimes|实在顾不上，经常缺席:study_absent;
+;
+label:study_weekly
+changeBg:library.webp -next;
+:从那天起，每周三放学，我们都会去图书馆。;
+:她做数学卷子，我背英语单词。;
+:做累了，就隔着桌子对视一眼，然后一起笑。;
+:冬天过去，春天来了。倒计时牌上的数字越来越小。;
+:我的成绩，一点一点往上爬。;
+阮乐茹:照这个势头，也许真的可以。;
+我:什么可以？;
+阮乐茹:……没什么。;
+:她低下头，耳朵又红了。;
+setVar:study=study+10;
+setVar:leru_fav=leru_fav+5;
+jumpLabel:final_judge;
+;
+label:study_sometimes
+changeFigure:none -id=leru -next;
+changeBg:bedroom_night.webp -next;
+:我偶尔会去图书馆，更多的时候，是在家里做题做到睡着。;
+:乐茹没有说什么，只是每天早上，都会在我桌上放一杯热豆浆。;
+:成绩有一些进步，但还不够。;
+setVar:study=study+3;
+jumpLabel:final_judge;
+;
+label:study_absent
+changeBg:classroom_winter.webp -next;
+:复习的事，一拖再拖。;
+:等我回过神来，倒计时牌上只剩下个位数。;
+:乐茹还是每天来上课，只是不再问我“要不要一起复习”了。;
+setVar:study=study-5;
+setVar:leru_fav=leru_fav-5;
+jumpLabel:final_judge;
+;
+label:final_judge
+changeFigure:none -id=leru -next;
+changeBg:school_gate_summer.webp -next;
+:放榜那天，我一个人去了学校。;
+:榜单很长。我从上往下找，一个一个名字地看。;
+jumpLabel:judge_bad -when=leru_fav<55;
+jumpLabel:judge_bad -when=study<50;
+jumpLabel:judge_good;
+;
+label:early_bad
+:有些话，错过了那个时机，就再也说不出口了。;
+:初三的倒计时一天天减少，我和乐茹之间，却像隔了一层看不见的玻璃。;
+:她还是会对我笑，只是那笑里，少了点什么。;
+:而我，始终没有勇气把它敲碎。;
+changeFigure:none -id=leru -next;
+changeScene:end_bad.txt;
+;
+label:judge_good
+changeFigure:none -id=leru -next;
+changeScene:end_good.txt;
+;
+label:judge_bad
+changeFigure:none -id=leru -next;
+changeScene:end_bad.txt;
