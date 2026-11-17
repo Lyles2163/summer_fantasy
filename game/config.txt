@@ -1,5 +1,5 @@
 Game_name:夏日幻想;
 Game_key:2c71d73cb77b742;
-Title_img:WebGAL_New_Enter_Image.webp;
+Title_img:bj.webp;
 Title_bgm:s_Title.mp3;
 Textbox_theme:imss;
